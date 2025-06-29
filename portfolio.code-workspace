@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Downloads/khumai"
+		},
+		{
+			"path": "../../../Downloads/mustang"
+		},
+		{
+			"path": "../../../Downloads/korea"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portfolio"
+	}
+}

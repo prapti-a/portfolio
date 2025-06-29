@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Prapti Acharya | Portfolio | Frontend Developer & Web Designer" />
+  <meta name="description" content="Portfolio of Prapti Acharya – frontend developer, web designer, and creative technologist based in Pokhara. Explore projects, photography, and contact info." />
+  <meta name="keywords" content="Prapti Acharya, frontend developer, web designer, portfolio, Pokhara, creative, UI, UX, JavaScript, CSS, HTML, projects, photography, Nepal" />
+  <meta name="author" content="Prapti Acharya" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://praptiacharya.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://praptiacharya.com/" />
+  <meta property="og:title" content="Prapti Acharya | Portfolio | Frontend Developer & Web Designer" />
+  <meta property="og:description" content="Portfolio of Prapti Acharya – frontend developer, web designer, and creative technologist based in Pokhara. Explore projects, photography, and contact info." />
+  <meta property="og:image" content="https://praptiacharya.com/images/preview.jpg" />
+  <meta property="og:site_name" content="Prapti Acharya Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Prapti Acharya | Portfolio | Frontend Developer & Web Designer" />
+  <meta name="twitter:description" content="Portfolio of Prapti Acharya – frontend developer, web designer, and creative technologist based in Pokhara. Explore projects, photography, and contact info." />
+  <meta name="twitter:image" content="https://praptiacharya.com/images/preview.jpg" />
+  <meta name="twitter:site" content="@praptiacharya" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Fira+Mono:wght@400;500&family=Pacifico&display=swap" />
+  <title>Prapti Acharya | Portfolio</title>
+</head>
+<body>
+  <!-- Your content here -->
+  <div id="particles-js"></div>
+  <!-- 🔲 Navigation -->
+  <nav>
+    <div class="logo">PA</div>
+  <!-- Theme toggle button moved to bottom of body -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#shots">Shots</a></li>
+      <li><a href="#socials">Socials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🏠 Hero -->
+<section id="home">
+  <video autoplay loop playsinline muted id="bgVideo">
+    <source src="iii.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <div class="description">
+      <h1 id="animated-name" class="motion-type"></h1>
+      <h2 class="fade-in-up" style="opacity:0;">Frontend Developer</h2>
+      <p class="fade-in-up" style="opacity:0;">Crafting beautiful and responsive web experiences</p>
+      <a href="#contact" class="cta-btn fade-in-up" style="opacity:0;">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Theme variables */
+:root {
+  --primary-green: #00ff99;
+  --dark-bg: #0a1510;
+  --light-bg: #18221b;
+  --text-main: #eaffea;
+  --text-muted: #aaffcc;
+  --input-bg: #13241a;
+  --input-border: var(--primary-green);
+  --footer-bg: var(--light-bg);
+  --toggle-color: var(--primary-green);
+  --shadow-dark: 0 6px 32px rgba(0,255,153,0.18);
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Montserrat', 'Fira Mono', monospace;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav, .site-footer, .minimal-footer {
+  background: var(--light-bg);
+  color: var(--primary-green);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+}
+
+.theme-switcher-pill, .theme-switch-btn, .theme-switch-slider {
+  box-shadow: var(--shadow-dark);
+}
+
+.profile-photo {
+  box-shadow: var(--shadow-dark);
+  border-radius: 0.7rem;
+  background: #0e1d15;
+  max-width: 90vw;
+  height: auto;
+}
+
+.album-photos img, .album-card img {
+  box-shadow: 0 2px 12px rgba(0,255,153,0.10);
+  border-radius: 0.5rem;
+  background: #0e1d15;
+  transition: box-shadow 0.2s, transform 0.2s;
+  max-width: 100%;
+  height: auto;
+}
+.album-photos img:hover, .album-card img:hover {
+  box-shadow: 0 8px 32px rgba(0,255,153,0.18);
+  transform: scale(1.03);
+}
+
+/* Responsive Layouts */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2vw;
+}
+nav .logo {
+  font-size: 2rem;
+}
+#nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#nav-links li {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 1vw;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7rem 1vw;
+  }
+  #nav-links {
+    gap: 0.7rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 0.5vw;
+  }
+  nav .logo {
+    font-size: 1.4rem;
+  }
+  .profile-photo {
+    width: 90vw !important;
+    max-width: 320px;
+    height: auto !important;
+  }
+  .about-img-col {
+    text-align: center;
+  }
+  .about-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+  }
+  .about-text {
+    font-size: 1rem !important;
+    padding: 0.5rem !important;
+  }
+  .albums-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.5vw;
+  }
+  .container {
+    padding: 0 0.2vw;
+  }
+  .profile-photo {
+    width: 98vw !important;
+    max-width: 220px;
+  }
+  .about-text {
+    font-size: 0.98rem !important;
+    padding: 0.2rem !important;
+  }
+  .albums-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem !important;
+  }
+  .site-footer, .minimal-footer {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.2vw;
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.about-img-col {
+  flex: 0 0 auto;
+}
+.about-text {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.album-card {
+  background: var(--input-bg);
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,255,153,0.08);
+  padding: 1.2rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.album-card:hover {
+  box-shadow: 0 8px 32px rgba(0,255,153,0.13);
+  transform: translateY(-2px) scale(1.01);
+}
+.album-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.site-quote blockquote {
+  font-size: 1.1rem;
+  padding: 1.2em 1em;
+}
+
+.contact-section .container {
+  padding: 2.5rem 1rem 2rem 1rem;
+}
+.contact-section input,
+.contact-section textarea {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+}
+.contact-section button[type="submit"] {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.1rem;
+}
+</style>
+
+
+
+</style>
+
+
+
+<!-- Modern Theme Switcher: single icon, expands to show all options on click -->
+<div id="theme-switcher" style="position:fixed;bottom:88px;right:32px;z-index:10001;display:flex;align-items:center;justify-content:center;">
+  <button id="theme-main-btn" class="theme-main-btn" title="Change theme">
+    <i id="theme-main-icon" class="fas fa-moon"></i>
+  </button>
+  <div class="theme-switcher-pill" id="theme-options" style="display:none;">
+    <button class="theme-switch-btn" data-theme="dark" title="Dark Mode"><i class="fas fa-moon"></i></button>
+    <button class="theme-switch-btn" data-theme="light" title="Light Mode"><i class="fas fa-sun"></i></button>
+    <button class="theme-switch-btn" data-theme="grey" title="Grey Mode"><i class="fas fa-circle-half-stroke"></i></button>
+    <div class="theme-switch-slider"></div>
+  </div>
+</div>
+<style>
+.theme-main-btn {
+  background: var(--dark-bg);
+  color: var(--toggle-color);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 16px rgba(0,255,153,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  z-index: 10002;
+}
+.theme-main-btn:focus {
+  outline: 2px solid var(--primary-green);
+}
+.theme-switcher-pill {
+  background: var(--dark-bg);
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0,255,153,0.13);
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 156px;
+  height: 54px;
+  gap: 0.2rem;
+  z-index: 10001;
+  animation: themeOptionsIn 0.22s cubic-bezier(.4,0,.2,1);
+}
+@keyframes themeOptionsIn {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: none; }
+}
+.theme-switch-btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--toggle-color);
+  font-size: 1.7rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+  z-index: 2;
+  position: relative;
+}
+.theme-switch-btn.active {
+  color: #fff;
+  background: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(0,255,153,0.13);
+}
+.theme-switch-slider {
+  display: none;
+}
+@media (max-width: 600px) {
+  #theme-switcher { right: 12px; }
+  .theme-main-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+  .theme-switcher-pill { min-width: 120px; height: 44px; }
+  .theme-switch-btn { width: 36px; height: 36px; font-size: 1.2rem; }
+}
+</style>
+<style>
+.theme-switcher-pill {
+  background: var(--dark-bg);
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0,255,153,0.13);
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  position: relative;
+  min-width: 156px;
+  height: 54px;
+  gap: 0.2rem;
+}
+.theme-switch-btn {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--toggle-color);
+  font-size: 1.7rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+  z-index: 2;
+  position: relative;
+}
+.theme-switch-btn.active {
+  color: #fff;
+  background: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(0,255,153,0.13);
+}
+.theme-switch-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  box-shadow: 0 2px 8px rgba(0,255,153,0.13);
+  transition: left 0.28s cubic-bezier(.4,0,.2,1), background 0.18s;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  #theme-switcher { right: 12px; }
+  .theme-switcher-pill { min-width: 120px; height: 44px; }
+  .theme-switch-btn, .theme-switch-slider { width: 36px; height: 36px; font-size: 1.2rem; }
+  .theme-switch-slider { top: 2px; left: 2px; }
+}
+</style>
+<style>
+.theme-toggle-switch {
+  display: flex;
+  align-items: center;
+  background: var(--dark-bg);
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(0,255,153,0.10);
+  padding: 6px 12px;
+  position: relative;
+  min-width: 120px;
+  height: 48px;
+  cursor: pointer;
+  transition: background 0.2s;
+  user-select: none;
+}
+.theme-toggle-switch:focus {
+  outline: 2px solid var(--primary-green);
+}
+.theme-icon {
+  color: var(--toggle-color);
+  font-size: 1.4rem;
+  margin: 0 8px;
+  opacity: 0.5;
+  transition: opacity 0.2s, color 0.2s;
+  z-index: 2;
+}
+.theme-icon.active {
+  opacity: 1;
+  color: var(--primary-green);
+}
+.theme-slider {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  width: 32px;
+  height: 36px;
+  background: var(--primary-green);
+  border-radius: 18px;
+  transition: left 0.28s cubic-bezier(.4,0,.2,1), background 0.2s;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,255,153,0.10);
+}
+body.light-theme .theme-toggle-switch {
+  background: var(--light-bg);
+}
+body.grey-theme .theme-toggle-switch {
+  background: var(--light-bg);
+}
+</style>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  // Modern Theme Switcher logic (pill style)
+
+  var themes = [
+    { name: 'dark', icon: 'fa-moon', title: 'Dark Mode' },
+    { name: 'light', icon: 'fa-sun', title: 'Light Mode' },
+    { name: 'grey', icon: 'fa-circle-half-stroke', title: 'Grey Mode' }
+  ];
+  var theme = localStorage.getItem('theme') || 'dark';
+  var mainBtn = document.getElementById('theme-main-btn');
+  var mainIcon = document.getElementById('theme-main-icon');
+  var options = document.getElementById('theme-options');
+  var btns = options.querySelectorAll('.theme-switch-btn');
+  function setTheme(themeName) {
+    // Remove all theme classes
+    document.body.classList.remove('light-theme', 'grey-theme', 'dark-theme');
+    // Add the selected theme class (except dark, which is default)
+    if (themeName === 'light') document.body.classList.add('light-theme');
+    else if (themeName === 'grey') document.body.classList.add('grey-theme');
+    // (dark = no class, handled by :root)
+    theme = themeName;
+    localStorage.setItem('theme', theme);
+    // Update main icon (remove all icons, add only the correct one)
+    if (mainIcon) {
+      mainIcon.className = '';
+      mainIcon.classList.add('fas');
+      var idx = themes.findIndex(function(t) { return t.name === theme; });
+      if (idx !== -1) {
+        mainIcon.classList.add(themes[idx].icon);
+        mainBtn.title = themes[idx].title;
+      }
+    }
+    // Update active button
+    btns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+    });
+    // Update all theme-dependent styles
+    if (typeof updateThemeStyles === 'function') updateThemeStyles();
+    // Remove inline background and color from body to allow CSS variables to work
+    document.body.style.background = '';
+    document.body.style.color = '';
+  }
+  btns.forEach(function(btn) {
+    btn.onclick = function(e) {
+      setTheme(btn.getAttribute('data-theme'));
+      options.style.display = 'none';
+      mainBtn.setAttribute('aria-expanded', 'false');
+    };
+  });
+  // Show/hide theme options
+  mainBtn.onclick = function(e) {
+    e.stopPropagation();
+    if (options.style.display === 'flex') {
+      options.style.display = 'none';
+      mainBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      options.style.display = 'flex';
+      mainBtn.setAttribute('aria-expanded', 'true');
+      // Position the pill right next to the button
+      var btnRect = mainBtn.getBoundingClientRect();
+      var pill = options;
+      pill.style.position = 'fixed';
+      pill.style.right = (window.innerWidth - btnRect.right) + 'px';
+      pill.style.bottom = (window.innerHeight - btnRect.bottom) + 'px';
+    }
+  };
+  // Hide theme options when clicking outside
+  document.addEventListener('mousedown', function(e) {
+    if (options.style.display === 'flex' && !options.contains(e.target) && e.target !== mainBtn && !mainBtn.contains(e.target)) {
+      options.style.display = 'none';
+      mainBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  // On load, set theme and icon
+  setTimeout(function() { setTheme(theme); }, 10);
+
+
+
+  // Typewriter effect for name, with fallback if element is missing
+  var el = document.getElementById('animated-name');
+  var text = 'Prapti Acharya';
+  var i = 0;
+  function type() {
+    if (!el) return;
+    if (i <= text.length) {
+      el.textContent = text.substring(0, i);
+      el.style.borderRight = '2px solid ' + getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+      i++;
+      setTimeout(type, 90);
+    } else {
+      el.style.animation = 'blink-caret 0.7s step-end infinite';
+      document.querySelectorAll('.fade-in-up').forEach(function(fadeEl, idx) {
+        setTimeout(function() {
+          fadeEl.style.animationDelay = (0.2 + idx * 0.18) + 's';
+          fadeEl.style.opacity = 1;
+          fadeEl.style.color = getComputedStyle(document.body).getPropertyValue('--text-main').trim();
+        }, 100);
+      });
+    }
+  }
+  if (el) type();
+
+
+  // Update theme-dependent styles
+  function updateThemeStyles() {
+    if (el) {
+      el.style.borderRight = '2px solid ' + getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    }
+    document.querySelectorAll('.fade-in-up').forEach(function(el) {
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--text-main').trim();
+    });
+    document.querySelectorAll('.section-title, h2, h3, h4').forEach(function(el) {
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    });
+    document.querySelectorAll('.value-badge').forEach(function(el) {
+      el.style.background = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--dark-bg').trim();
+    });
+    document.querySelectorAll('.site-quote blockquote').forEach(function(el) {
+      el.style.borderLeft = '4px solid ' + getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+      el.style.background = getComputedStyle(document.body).getPropertyValue('--input-bg').trim();
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--toggle-color').trim();
+    });
+    document.querySelectorAll('.cta-btn, button[type="submit"]').forEach(function(el) {
+      el.style.background = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--dark-bg').trim();
+    });
+    document.querySelectorAll('nav, .site-footer, .minimal-footer').forEach(function(el) {
+      el.style.background = getComputedStyle(document.body).getPropertyValue('--light-bg').trim();
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    });
+    document.querySelectorAll('nav .logo, .footer-logo').forEach(function(el) {
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    });
+    document.querySelectorAll('nav a, .footer-social a').forEach(function(el) {
+      el.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    });
+    var goTopBtn = document.getElementById('goTopBtn');
+    if (goTopBtn) {
+      goTopBtn.style.background = getComputedStyle(document.body).getPropertyValue('--dark-bg').trim();
+      goTopBtn.style.color = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    }
+    // Update theme switcher pill and slider
+    var switcherPill = document.querySelector('.theme-switcher-pill');
+    var slider = document.querySelector('.theme-switch-slider');
+    if (switcherPill && slider) {
+      switcherPill.style.background = getComputedStyle(document.body).getPropertyValue('--dark-bg').trim();
+      slider.style.background = getComputedStyle(document.body).getPropertyValue('--primary-green').trim();
+    }
+    // About section text
+    var aboutDesc = document.getElementById('about-desc');
+    if (aboutDesc) {
+      aboutDesc.style.color = getComputedStyle(document.body).getPropertyValue('--text-main').trim();
+    }
+    if (typeof window.updateAboutReveal === 'function') {
+      window.updateAboutReveal();
+    }
+  }
+
+  // About section: staged reveal on photo click
+  var aboutContent = document.getElementById('about-content');
+  var aboutImgCol = document.getElementById('about-img-col');
+  var aboutDesc = document.getElementById('about-desc');
+  var profilePhoto = document.getElementById('profile-photo');
+  if (aboutContent && aboutImgCol && aboutDesc && profilePhoto) {
+    aboutContent.style.cursor = 'pointer';
+    profilePhoto.style.cursor = 'pointer';
+    aboutDesc.style.opacity = 0;
+    aboutDesc.style.display = 'none';
+    profilePhoto.onclick = function(e) {
+      e.stopPropagation();
+      aboutDesc.style.display = 'block';
+      setTimeout(function() {
+        aboutDesc.style.opacity = 1;
+      }, 10);
+      aboutContent.style.cursor = 'default';
+      profilePhoto.style.cursor = 'default';
+    };
+  }
+});
+</script>
+
+
+  <!-- 🙋‍♀️ About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content about-animate" id="about-content" style="cursor:pointer;">
+        <div class="about-img-col" style="text-align:center; animation: aboutFadeIn 1.1s cubic-bezier(.4,0,.2,1) 0.1s both;" id="about-img-col">
+          <img src="k14.jpg" id="profile-photo" alt="Prapti Acharya" class="profile-photo" style="width:340px; height:340px; object-fit:cover; box-shadow:0 4px 24px rgba(0,255,153,0.15); border-radius:0; animation: aboutPhotoPop 1.2s cubic-bezier(.4,0,.2,1) 0.25s both; cursor:pointer;">
+        </div>
+        <div class="about-text animate-fade-in-up" id="about-desc" style="transition:opacity 0.8s; animation: aboutTextSlideUp 1.2s cubic-bezier(.4,0,.2,1) 0.45s both; opacity:0; display:none; color:var(--text-main); background:none; border-radius:0; padding:0; box-shadow:none;">
+
+<style>
+/* About section animation */
+.about-animate {
+  animation: aboutSectionAppear 1.1s cubic-bezier(.4,0,.2,1) 0s both;
+}
+@keyframes aboutSectionAppear {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes aboutFadeIn {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes aboutPhotoPop {
+  0% { opacity: 0; transform: scale(0.8) rotate(-6deg); box-shadow: none; }
+  60% { opacity: 1; transform: scale(1.05) rotate(2deg); box-shadow: 0 8px 32px rgba(0,255,153,0.18); }
+  100% { opacity: 1; transform: scale(1) rotate(0); box-shadow: 0 4px 24px rgba(0,255,153,0.15); }
+}
+@keyframes aboutTextSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: none; }
+}
+</style>
+          <div class="intro" style="color:var(--text-main); font-size:1.15rem; font-weight:600; margin-bottom:0.7rem;">Hi, I'm Prapti Acharya — a 17-year-old frontend developer, web designer undergraduate based in Pokhara.</div>
+          <div class="edu" style="color:var(--text-muted); font-size:1rem; margin-bottom:0.7rem;">Secondary School: Sainik Awasiya Mahavidyalaya<br>High School: Motherland Secondary School<br>Major: Science with Computer Science</div>
+          <div class="desc" style="color:#00ff99; font-size:1rem; margin-bottom:0.7rem;">I’m passionate about building beautiful, user-friendly websites that blend creativity and technology. My curiosity for the world inspires my work: I love <b style="color:#00ff99;">cooking</b>, <b style="color:#00ff99;">exploring</b>, and <b style="color:#00ff99;">dancing</b>. These hobbies help me bring fresh ideas and energy to every project.</div>
+          <div class="desc" style="color:#00ff99; font-size:1rem; margin-bottom:0.7rem;">My goal is to create digital experiences that are visually stunning, accessible, and easy to use.<br>Let’s connect and make something amazing together!</div>
+          <div class="values" style="margin-top:0.7rem;">
+            <span class="value-badge">HTML</span>
+            <span class="value-badge">CSS</span>
+            <span class="value-badge">JavaScript</span>
+            <span class="value-badge">PHP</span>
+            <span class="value-badge">Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧰 Shots -->
+  <section id="Shots">
+  <div class="container">
+    <h2 class="section-title">Shots</h2>
+    <div class="albums-grid">
+      <!-- Album 1 -->
+      <div class="album-card" id="album1-card" onclick="showAlbumPhotos('album1-photos')" style="cursor:pointer;">
+        <h3>Khumai Danda</h3>
+        <div class="album-photos" id="album1-photos" style="display:none;">
+          <img src="k6.jpg" alt="Khumai 1" onclick="openFullscreen(this)">
+          <img src="k8.jpg" alt="Khumai 2" onclick="openFullscreen(this)">
+          <img src="k14.jpg" alt="Khumai 4" onclick="openFullscreen(this)">
+          <img src="k10.jpg" alt="Khumai 5" onclick="openFullscreen(this)">
+          <img src="k11.jpg" alt="Khumai 6" onclick="openFullscreen(this)">
+          <img src="k12.jpg" alt="Khumai 7" onclick="openFullscreen(this)">
+          <img src="k7.jpg" alt="Khumai 8" onclick="openFullscreen(this)">
+          <img src="k9.jpg" alt="Khumai 9" onclick="openFullscreen(this)">
+        </div>
+      </div>
+      <!-- Album 2 -->
+      <div class="album-card" id="album2-card" onclick="showAlbumPhotos('album2-photos')" style="cursor:pointer;">
+        <h3>Mustang</h3>
+        <div class="album-photos" id="album2-photos" style="display:none;">
+          <img src="m2.jpg" alt="mustang 1" onclick="openFullscreen(this)">
+          <img src="m3.jpg" alt="mustang 2" onclick="openFullscreen(this)">
+          <img src="m4.jpg" alt="mustang 3" onclick="openFullscreen(this)">
+          <img src="m5.jpg" alt="mustang 4" onclick="openFullscreen(this)">
+          <img src="m6.jpg" alt="mustang 5" onclick="openFullscreen(this)">
+          <img src="m7.jpg" alt="mustang 6" onclick="openFullscreen(this)">
+          <img src="m8.jpg" alt="mustang 7" onclick="openFullscreen(this)">
+          <img src="m9.jpg" alt="mustang 8" onclick="openFullscreen(this)">
+        <img src="m10.jpg" alt="mustang 9" onclick="openFullscreen(this)">
+        <img src="m11.jpg" alt="mustang 10" onclick="openFullscreen(this)">
+        <img src="m12.jpg" alt="mustang 11" onclick="openFullscreen(this)">
+        <img src="m13.jpg" alt="mustang 12" onclick="openFullscreen(this)">
+        <img src="m14.jpg" alt="mustang 13" onclick="openFullscreen(this)">
+        <img src="m15.jpg" alt="mustang 14" onclick="openFullscreen(this)">
+        
+        
+        </div>
+      </div>
+      <!-- Album 3 -->
+      <div class="album-card" id="album3-card" onclick="showAlbumPhotos('album3-photos')" style="cursor:pointer;">
+        <h3>Korea</h3>
+        <div class="album-photos" id="album3-photos" style="display:none;">
+        
+          
+          
+          <img src="kr5.jpg" alt="korea 4" onclick="openFullscreen(this)">
+          <img src="kr6.jpg" alt="korea 5" onclick="openFullscreen(this)">
+          
+          <img src="kr8.jpg" alt="korea 7" onclick="openFullscreen(this)">
+          <img src="kr9.jpg" alt="korea 8" onclick="openFullscreen(this)">
+           <img src="kr10.jpg" alt="korea 9" onclick="openFullscreen(this)">
+          <img src="kr11.JPG" alt="korea 10" onclick="openFullscreen(this)">
+          
+          <img src="kr13.JPG" alt="korea 12" onclick="openFullscreen(this)">
+          <img src="kr14.JPG" alt="korea 13" onclick="openFullscreen(this)">
+          <img src="kr15.JPG" alt="korea 14" onclick="openFullscreen(this)">
+          <img src="kr16.JPG" alt="korea 15" onclick="openFullscreen(this)">
+          <img src="kr17.JPG" alt="korea 16" onclick="openFullscreen(this)">
+          
+          <img src="kr19.JPG" alt="korea 18" onclick="openFullscreen(this)">
+          <img src="kr20.JPG" alt="korea 19" onclick="openFullscreen(this)">
+          <img src="kr21.JPG" alt="korea 20" onclick="openFullscreen(this)">
+          <img src="kr22.JPG" alt="korea 21" onclick="openFullscreen(this)">
+          <img src="kr23.JPG" alt="korea 22" onclick="openFullscreen(this)">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<script>
+function showAlbumPhotos(id) {
+  // Hide all album photos except the one being opened
+  document.querySelectorAll('.album-photos').forEach(function(el) {
+    if (el.id !== id) {
+      el.style.display = 'none';
+    }
+  });
+  // Toggle the selected album photos
+  var selected = document.getElementById(id);
+  if (selected) {
+    if (selected.style.display === 'grid') {
+      selected.style.display = 'none';
+    } else {
+      selected.style.display = 'grid';
+    }
+  }
+}
+function openFullscreen(img) {
+  // Create overlay
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.92)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 9999;
+  overlay.onclick = function() { document.body.removeChild(overlay); };
+
+  // Create full image
+  var fullImg = document.createElement('img');
+  fullImg.src = img.src;
+  fullImg.alt = img.alt;
+  fullImg.style.maxWidth = '90vw';
+  fullImg.style.maxHeight = '90vh';
+  fullImg.style.borderRadius = '1.2rem';
+  fullImg.style.boxShadow = '0 8px 32px rgba(0,255,153,0.18)';
+  fullImg.style.background = '#101c16';
+  fullImg.style.objectFit = 'contain';
+  overlay.appendChild(fullImg);
+
+  document.body.appendChild(overlay);
+}
+
+function openFullscreenVideo(video) {
+  var overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.92)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 9999;
+  overlay.onclick = function() { document.body.removeChild(overlay); };
+
+  var fullVideo = document.createElement('video');
+  fullVideo.src = video.src;
+  fullVideo.controls = true;
+
+  fullVideo.autoplay = true;
+  fullVideo.style.maxWidth = '90vw';
+  fullVideo.style.maxHeight = '90vh';
+  fullVideo.style.borderRadius = '1.2rem';
+  fullVideo.style.boxShadow = '0 8px 32px rgba(0,255,153,0.18)';
+  fullVideo.style.background = '#101c16';
+  overlay.appendChild(fullVideo);
+
+  document.body.appendChild(overlay);
+}
+</script>
+
+
+  <!-- 🌟 Minimal Quote Section -->
+  <section class="site-quote">
+    <div class="container">
+      <blockquote>
+        <span class="quote-text">Design is not just what it looks like and feels like. Design is how it works.</span>
+        <footer>– Steve Jobs</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact Me Section -->
+  <section id="contact" class="contact-section">
+    <div class="container" style="max-width:600px;margin:0 auto;padding:2.5rem 1rem 2rem 1rem;text-align:center;">
+      <h2 style="font-family:Montserrat,sans-serif;font-weight:700;font-size:2rem;margin-bottom:1.2rem;color:#00ff99;">Contact Me</h2>
+      <p style="color:#aaa;margin-bottom:2rem;">Have a project, question, or just want to say hi? Fill out the form below or email me directly!</p>
+      <form id="contactForm" onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:1.1rem;align-items:center;">
+        <input type="text" id="name" name="name" placeholder="Your Name" required style="width:100%;max-width:400px;padding:0.7rem;border-radius:6px;border:1px solid #222;background:#181c1f;color:#fff;" />
+        <input type="email" id="email" name="email" placeholder="Your Email" required style="width:100%;max-width:400px;padding:0.7rem;border-radius:6px;border:1px solid #222;background:#181c1f;color:#fff;" />
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required style="width:100%;max-width:400px;padding:0.7rem;border-radius:6px;border:1px solid #222;background:#181c1f;color:#fff;"></textarea>
+        <button type="submit" style="background:#00ff99;color:#101c16;font-weight:600;padding:0.7rem 2.2rem;border:none;border-radius:6px;cursor:pointer;transition:background 0.2s;">Send</button>
+      </form>
+      <div style="margin-top:2rem;color:#aaa;">
+        <div><i class="fas fa-envelope"></i> <a href="mailto:1011praptii@gmail.com" style="color:#00ff99;">1011praptii@gmail.com</a></div>
+        <div style="margin-top:0.5rem;"><i class="fas fa-map-marker-alt"></i> Pokhara, Nepal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Go to Top Button -->
+  <button id="goTopBtn" title="Go to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:10000;background:#101c16;color:#00ff99;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 4px 16px rgba(0,255,153,0.18);font-size:2rem;cursor:pointer;transition:background 0.2s;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="site-footer minimal-footer">
+    <div class="container">
+      <div class="footer-brand" style="text-align:center;">
+        <div class="footer-logo" style="font-size:2.2rem;font-weight:700;letter-spacing:2px;">PA</div>
+      </div>
+      <div class="footer-social" style="margin:18px 0;text-align:center;">
+        <a href="https://github.com/prapti-a" target="_blank" aria-label="GitHub" style="margin:0 10px;font-size:1.5rem;color:#00ff99;"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/praptiacharya" target="_blank" aria-label="LinkedIn" style="margin:0 10px;font-size:1.5rem;color:#00ff99;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/share/1Fx5PZXXNT/?mibextid=wwXIfr" target="_blank" aria-label="facebook" style="margin:0 10px;font-size:1.5rem;color:#00ff99;"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/pr__aptii" target="_blank" aria-label="Instagram" style="margin:0 10px;font-size:1.5rem;color:#00ff99;"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="footer-bottom" style="text-align:center;font-size:1rem;color:#aaa;">
+        <p>&copy; <span id="year"></span> Prapti Acharya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+// Go to Top Button functionality
+const goTopBtn = document.getElementById('goTopBtn');
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    goTopBtn.style.display = 'block';
+  } else {
+    goTopBtn.style.display = 'none';
+  }
+};
+goTopBtn.onclick = function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+};
+
+document.getElementById('year').textContent = new Date().getFullYear();
+function handleSubmit(event) {
+  event.preventDefault();
+  alert('Thank you for reaching out! I will get back to you soon.');
+  event.target.reset();
+}
+</script>
+</body>
+</html>
